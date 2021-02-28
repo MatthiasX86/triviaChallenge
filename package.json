@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
+    "@types/styled-components": "5.1.7",
     "gatsby": "^2.32.8",
     "gatsby-image": "^2.11.0",
     "gatsby-plugin-gatsby-cloud": "^1.0.2",
@@ -17,11 +18,14 @@
     "gatsby-transformer-sharp": "^2.12.0",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
+    "react-bootstrap": "1.5.0",
     "react-dom": "^16.12.0",
     "react-helmet": "^6.1.0",
+    "styled-components": "5.2.1",
     "typescript": "4.2.2"
   },
   "devDependencies": {
+    "@types/react-bootstrap": "0.32.25",
     "@typescript-eslint/eslint-plugin": "4.15.2",
     "@typescript-eslint/parser": "4.15.2",
     "eslint": "7.21.0",
