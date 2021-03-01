@@ -82,8 +82,6 @@ interface IResults {
 }
 
 const Results: FunctionComponent = ({ result, questions, dispatch }) => {
-  console.log('the results are: ', questions);
-  console.log('the result is: ', result);
   
   return (
     <Col lg={{ span: 8, offset: 2 }}>

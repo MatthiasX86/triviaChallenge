@@ -47,6 +47,5 @@ export const getQuestionsData = () => dispatch => getData()
     return response.json()
   })
   .then( ( data: IResponse ) => {
-    console.log('the data is: ', data)
     dispatch( updateQuestions(data.results) )
   })

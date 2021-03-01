@@ -46,7 +46,6 @@ const CountContainer = styled.div`
   left: 30px;
 `
 
-/* ====== UI Elements ====== */
 
 /* ====== Text Elements ====== */
 

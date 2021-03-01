@@ -11,8 +11,6 @@ interface IApp {
 
 const App: FunctionComponent<IApp> = ({ view }) => (
   <>
-    {console.log('the view is: ', view)}
-
     {view === 'INTRO' && (
       <Intro />
     )}
