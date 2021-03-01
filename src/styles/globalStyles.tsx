@@ -83,12 +83,35 @@ export const GlobalStyles = createGlobalStyle`
     line-height: 1.2;
     font-weight: 600;
     font-style: normal;
-    font-family: "Poppins", serif;
+    font-family: "Poppins", sans-serif;
     color: ${Colors.white};
     letter-spacing: 0.8px;
     font-size: 28px;
     text-align: center;
     margin-bottom: 25px;
+  }
+
+  h3 {
+    font-weight: 600;
+    font-style: normal;
+    font-family: "Poppins", serif;
+    letter-spacing: 0px;
+    line-height: 1.2;
+    color: ${Colors.white};
+    font-size: 20px;
+    text-align: center;
+  }
+
+  h4 {
+    color: ${Colors.white};
+    line-height: 1.2;
+    letter-spacing: 0;
+    font-weight: 400;
+    font-style: normal;
+    font-family: "Poppins", sans-serif;
+    letter-spacing: 0.8px;
+    font-size: 14px;
+    text-align: center;
   }
 
   button {
