@@ -13,7 +13,7 @@ const Main = styled.main`
   background-size: cover;
   height: 100vh;
   width: 100vw;
-  padding: 200px 0px;
+  padding: 120px 0px;
 `
 
 const Layout: FunctionComponent = ({ children }) => {
