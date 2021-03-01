@@ -1,3 +1,5 @@
+export const GET_DATA = 'GET_DATA';
+
 export const UPDATE_VIEW = 'UPDATE_VIEW';
 
 export const UPDATE_QUESTION = 'UPDATE_QUESTION';

@@ -1,10 +1,10 @@
-import React, {FunctionComponent, useState} from 'react';
+import React, {FunctionComponent, useEffect, useState} from 'react';
 import {Col} from 'react-bootstrap';
 import {connect} from 'react-redux';
 import styled from 'styled-components';
 import {Assets} from '../assets/assets';
 import {Button} from '../components/button';
-import {updateView} from '../state/actions';
+import {getQuestionsData, updateView} from '../state/actions';
 import {Animations, Transitions, UIStyles} from '../styles/mixins';
 import { IActionView, IActive } from '../types/index';
 
@@ -164,19 +164,26 @@ interface IIntro {
   dispatch: (action: IAction) => IActionView;
 }
 
-const Intro: FunctionComponent<IIntro> = ({ dispatch }) => (
-  <Col lg={{ span: 10, offset: 1}}>
-    <SectionContainer>
-      <Title>Trivia<br/>Challenge</Title>
-      <StartContainer>
-        <Subtitle>Welcome to trivia Challenger!</Subtitle>
-        <Button clickHandle={ () => dispatch(updateView('QUESTION')) }>
-          Let's play!
-        </Button>
-        <HowToPlay />
-      </StartContainer>
-    </SectionContainer>
-  </Col>
-)
+const Intro: FunctionComponent<IIntro> = ({ dispatch }) => {
+
+  const [isMounted, setMount] = useState<boolean>(false);
+
+  useEffect(() => { dispatch( getQuestionsData() ) })
+
+  return (
+    <Col lg={{ span: 10, offset: 1}}>
+      <SectionContainer>
+        <Title>Trivia<br/>Challenge</Title>
+        <StartContainer>
+          <Subtitle>Welcome to trivia Challenger!</Subtitle>
+          <Button clickHandle={ () => dispatch(updateView('QUESTION')) }>
+            Let's play!
+          </Button>
+          <HowToPlay />
+        </StartContainer>
+      </SectionContainer>
+    </Col>
+  )
+}
 
 export default connect()(Intro);

@@ -32,6 +32,11 @@ const QuestionContainer = styled.div`
 `
 
 const ChoicesContainer = styled.div`
+  margin-top: 60px;
+  display: flex;
+  height: 160px;
+  flex-direction: column;
+  justify-content: space-between;
 `
 
 /* ====== UI Elements ====== */
@@ -54,14 +59,14 @@ interface IQuestions {
 
 const Questions: FunctionComponent<IQuestions> = ({ questions = [], count }) => {
 
-  const { question = '', category = '' } = questions[count];
+  // const { question = '', category = '' } = questions[count];
 
   return (
     <Col lg={{ span: 6, offset: 3 }}>
       <SectionContainer>
         <QuestionContainer>
-          <Category>{category}</Category>
-          <Question>{question}</Question>
+          <Category>History</Category>
+          <Question>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolores eum corrupti perferendis reiciendis, autem hic.</Question>
         </QuestionContainer>
           {console.log('questions are: ', questions)}
         <ChoicesContainer>

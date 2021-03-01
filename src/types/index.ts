@@ -6,25 +6,34 @@ export interface IHandle {
   clickHandle: () => void;
 }
 
-export interface IQuestion {
+export interface IData {
   category: string;
   type: string;
   difficulty: string;
   question: string;
   correct_answer: string;
   incorrect_answers: string[];
-  number: number;
+}
+
+export interface IResponse {
+  response_code: number;
+  results: IData[];
+}
+
+export interface IQuestion extends IData {
+  count: number;
 }
 
 export type IView = 'INTRO' | 'QUESTION' | 'COMPLETED';
 
 export interface IActionView {
   type: 'UPDATE_VIEW';
-  newView: IView;
+  view: IView;
 }
 
 export interface IActionQuestion {
   type: 'UPDATE_QUESTION';
+  data: IData[];
 }
 
 export interface IActionResult {
@@ -34,6 +43,7 @@ export interface IActionResult {
 export type IAction = IActionView & IActionQuestion & IActionResult;
 
 export interface IState {
+  readonly data: IData[];
   readonly view: IView;
   readonly questions: IQuestion[];
   readonly count: number; 
