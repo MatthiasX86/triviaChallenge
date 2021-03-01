@@ -114,6 +114,16 @@ export const GlobalStyles = createGlobalStyle`
     text-align: center;
   }
 
+  h5 {
+    font-weight: 600;
+    font-style: normal;
+    font-family: "Poppins", serif;
+    font-size: 20px;
+    letter-spacing: 0px;
+    line-height: 1.2;
+    color: ${Colors.grey};
+  }
+
   button {
     border: none;
     background-color: ${Colors.white};

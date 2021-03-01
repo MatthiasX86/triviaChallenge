@@ -2,6 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {IState, IView} from './types';
 import Intro from './views/intro';
+import Questions from './views/questions';
 
 interface IApp {
   view: IView;
@@ -16,7 +17,7 @@ const App: FunctionComponent<IApp> = ({ view }) => (
     )}
 
     {view === 'QUESTION' && (
-      <span>this is the questions view</span>
+      <Questions />
     )}
 
     {view === 'COMPLETED' && (

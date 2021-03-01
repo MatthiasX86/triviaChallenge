@@ -1,7 +1,8 @@
 export const Colors = {
   white: "#fff",
   green: "#24DA0B",
-  black: "#3c3939"
+  black: "#3c3939",
+  grey: "#bdbdbd"
 }
 
 export const UIStyles = {
