@@ -11,12 +11,11 @@ const initialState: IState = {
 
 const reducer = (state: IState = initialState, action: IAction): IState => {
 
-  const { type } = action;
+  const { type, newView } = action;
 
   switch (type) {
 
     case UPDATE_VIEW:
-      const { newView } = action;
 
       return {
         ...state,

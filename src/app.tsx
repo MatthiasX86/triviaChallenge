@@ -7,7 +7,7 @@ interface IApp {
   view: IView;
 }
 
-const App: FunctionComponent = ({ view }) => (
+const App: FunctionComponent<IApp> = ({ view }) => (
   <>
     {console.log('the view is: ', view)}
 
