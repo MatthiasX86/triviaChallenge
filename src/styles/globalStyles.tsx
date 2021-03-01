@@ -1,5 +1,5 @@
 import {createGlobalStyle, css} from "styled-components";
-import {Colors} from "./mixins";
+import {Colors, UIStyles} from "./mixins";
 
 const Reset = css`
   {/* 
@@ -56,13 +56,24 @@ const Reset = css`
 export const GlobalStyles = createGlobalStyle`
   ${Reset}
 
+  p, span {
+    letter-spacing: 0px;
+    color: ${Colors.black};
+    text-align: center;
+    line-height: 1.8;
+    font-size: 22px;
+    font-weight: 600;
+    font-style: normal;
+    font-family: "Poppins", serif;
+  }
+
   h1 {
     font-family: 'Poppins', sans-serif;
     font-weight: 800;
     font-style: normal;
     font-size: 90px;
     color: ${Colors.white};
-    text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.25);
+    text-shadow: ${UIStyles.textShadow};
     line-height: 1.2;
     text-align: center;
     letter-spacing: 0px;
@@ -78,5 +89,15 @@ export const GlobalStyles = createGlobalStyle`
     font-size: 28px;
     text-align: center;
     margin-bottom: 25px;
+  }
+
+  button {
+    border: none;
+    background-color: ${Colors.white};
+    width: 274px;
+    height: 60px;
+    box-shadow: ${UIStyles.boxShadow};
+    background-color: #ffffff;
+    border-radius: 30px;
   }
 `
