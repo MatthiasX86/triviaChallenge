@@ -4,6 +4,8 @@ Results from Ligonier Code Challenge:
 
 # Trivia Game Coding Challenge
 
+[Live demo](https://603d4d0fe2d59d0ef77b33ba--dreamy-lovelace-57ebd4.netlify.app/)
+
 ## Overview
 
 Project was build with :
