@@ -1,6 +1,7 @@
 import React, {FunctionComponent, useEffect, useState} from 'react';
 import {Col} from 'react-bootstrap';
 import {connect} from 'react-redux';
+import shortid from 'shortid';
 import styled from 'styled-components';
 import {Assets} from '../assets/assets';
 import {Button} from '../components/button';
@@ -77,7 +78,8 @@ const QuestionText = styled.p`
 /* ====== Components ====== */
 
 interface IResults {
-  results: IQuestion[];
+  result: number;
+  questions: IQuestion[];
   dispatch: (action: IAction) => IActionReset
 }
 
@@ -93,7 +95,7 @@ const Results: FunctionComponent = ({ result, questions, dispatch }) => {
         </ScoreContainer>
         <QuestionsContainer>
           {questions.map( ({ question, solved }) => (
-            <QuestionsBox>
+            <QuestionsBox key={shortid.generate()}>
               <Mark src={solved ? Assets.Success : Assets.Fail} />
               <QuestionText dangerouslySetInnerHTML={{__html: question }} /> 
             </QuestionsBox>
