@@ -1,13 +1,12 @@
-import React, {FunctionComponent, useEffect, useState} from 'react';
+import React, {FunctionComponent} from 'react';
 import {Col} from 'react-bootstrap';
 import {connect} from 'react-redux';
 import shortid from 'shortid';
 import styled from 'styled-components';
 import {Assets} from '../assets/assets';
 import {Button} from '../components/button';
-import {resetChallenge} from '../state/actions';
 import {Colors, UIStyles, Animations} from '../styles/mixins';
-import {IActionReset, IQuestion} from '../types';
+import {IState, IActionReset, IQuestion} from '../types';
 
 /* ====== Containers ====== */
 
@@ -80,10 +79,10 @@ const QuestionText = styled.p`
 interface IResults {
   result: number;
   questions: IQuestion[];
-  dispatch: (action: IAction) => IActionReset
+  dispatch: (action: IActionReset) => void
 }
 
-const Results: FunctionComponent = ({ result, questions, dispatch }) => {
+const Results: FunctionComponent<IResults> = ({ result, questions, dispatch }) => {
   
   return (
     <Col lg={{ span: 8, offset: 2 }}>

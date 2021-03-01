@@ -6,7 +6,7 @@ import {Assets} from '../assets/assets';
 import {Button} from '../components/button';
 import {getQuestionsData, updateView} from '../state/actions';
 import {Animations, Transitions, UIStyles} from '../styles/mixins';
-import { IAction, IActionView, IActive } from '../types/index';
+import { IActionQuestion, IActionView, IActive } from '../types/index';
 
 /* ====== Containers ====== */
 
@@ -161,12 +161,10 @@ const HowToPlay: FunctionComponent = () => {
  }
 
 interface IIntro {
-  dispatch: (action: IAction) => IActionView;
+  dispatch: (action: IActionView | IActionQuestion) => void;
 }
 
 const Intro: FunctionComponent<IIntro> = ({ dispatch }) => {
-
-  const [isMounted, setMount] = useState<boolean>(false);
 
   useEffect(() => { dispatch( getQuestionsData() ) })
 

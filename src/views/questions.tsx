@@ -1,12 +1,11 @@
-import React, {FunctionComponent, useEffect, useState} from 'react';
+import React, {FunctionComponent } from 'react';
 import {Col} from 'react-bootstrap';
 import {connect} from 'react-redux';
 import styled from 'styled-components';
-import {Assets} from '../assets/assets';
 import {Button} from '../components/button';
 import {answerQuestion, updateView} from '../state/actions';
 import {Colors, UIStyles, Animations} from '../styles/mixins';
-import {IAction, IActionAnswer, IQuestion, IState} from '../types';
+import { IActionAnswer, IActionView, IQuestion, IState} from '../types';
 
 
 /* ====== Containers ====== */
@@ -70,7 +69,7 @@ const QuestionsCount = styled.span`
 interface IQuestions {
   questions: IQuestion[];
   count: number;
-  dispatch: (action: IAction) => IActionAnswer
+  dispatch: (action: IActionAnswer | IActionView) => void
 }
 
 const Questions: FunctionComponent<IQuestions> = ({ questions = [], count, dispatch }) => {

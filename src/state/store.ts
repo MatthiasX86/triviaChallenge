@@ -49,7 +49,6 @@ const reducer = (state: IState = initialState, action: IAction): IState => {
       }
 
     case RESET:
-      console.log('got here at the final')
       return {
         ...initialState,
       }
