@@ -15,10 +15,9 @@ const initialState: IState = {
   result: 0,
 }
 
-
 const reducer = (state: IState = initialState, action: IAction): IState => {
 
-  const { type, view, data, count, isCorrect, questions } = action;
+  const { type, view, data, count, isCorrect } = action;
 
   switch (type) {
 
