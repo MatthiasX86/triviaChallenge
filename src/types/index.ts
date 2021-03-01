@@ -22,6 +22,7 @@ export interface IResponse {
 
 export interface IQuestion extends IData {
   count: number;
+  solved?: boolean;
 }
 
 export type IView = 'INTRO' | 'QUESTION' | 'COMPLETED';
@@ -36,6 +37,12 @@ export interface IActionQuestion {
   data: IData[];
 }
 
+export interface IActionAnswer {
+  type: 'ANSWER_QUESTION';
+  count: number;
+  isCorrect: boolean; 
+}
+
 export interface IActionResult {
   type: 'UPDATE_RESULT'
 }
@@ -43,7 +50,6 @@ export interface IActionResult {
 export type IAction = IActionView & IActionQuestion & IActionResult;
 
 export interface IState {
-  readonly data: IData[];
   readonly view: IView;
   readonly questions: IQuestion[];
   readonly count: number; 

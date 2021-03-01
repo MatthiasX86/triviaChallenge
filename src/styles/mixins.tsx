@@ -2,7 +2,8 @@ export const Colors = {
   white: "#fff",
   green: "#24DA0B",
   black: "#3c3939",
-  grey: "#bdbdbd"
+  grey: "#bdbdbd",
+  darkGray: "#6c6a6a",
 }
 
 export const UIStyles = {

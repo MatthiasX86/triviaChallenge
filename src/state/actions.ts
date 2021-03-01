@@ -1,15 +1,34 @@
-import { IView, IActionView, IData, IResponse, IActionQuestion } from '../types/index';
-import {UPDATE_QUESTION, UPDATE_VIEW} from './constants';
+import {
+  IView,
+  IActionView,
+  IData,
+  IResponse,
+  IActionQuestion,
+  IActionAnswer
+} from '../types/index';
+
+import {
+  UPDATE_QUESTION,
+  UPDATE_VIEW,
+  ANSWER_QUESTION
+} from './constants';
 
 
-export const updateQuestions = ( data: IData[] ): IActionQuestion => ({
-  type: UPDATE_QUESTION,
-  data,
-})
 
 export const updateView = ( view: IView ): IActionView => ({
   type: UPDATE_VIEW,
   view,
+});
+
+export const updateQuestions = ( data: IData[] ): IActionQuestion => ({
+  type: UPDATE_QUESTION,
+  data,
+});
+
+export const answerQuestion = ( count: number, isCorrect: boolean): IActionAnswer => ({
+  type: ANSWER_QUESTION,
+  count,
+  isCorrect
 })
 
 const getData = () => fetch('https://opentdb.com/api.php?amount=10&difficulty=hard&type=boolean');

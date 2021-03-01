@@ -21,7 +21,7 @@ const App: FunctionComponent<IApp> = ({ view }) => (
     )}
 
     {view === 'COMPLETED' && (
-      <Intro />
+      <span>this means this is the results screen</span>
     )}
   </>
 )

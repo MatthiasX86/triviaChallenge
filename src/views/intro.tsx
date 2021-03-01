@@ -6,7 +6,7 @@ import {Assets} from '../assets/assets';
 import {Button} from '../components/button';
 import {getQuestionsData, updateView} from '../state/actions';
 import {Animations, Transitions, UIStyles} from '../styles/mixins';
-import { IActionView, IActive } from '../types/index';
+import { IAction, IActionView, IActive } from '../types/index';
 
 /* ====== Containers ====== */
 
@@ -176,7 +176,7 @@ const Intro: FunctionComponent<IIntro> = ({ dispatch }) => {
         <Title>Trivia<br/>Challenge</Title>
         <StartContainer>
           <Subtitle>Welcome to trivia Challenger!</Subtitle>
-          <Button clickHandle={ () => dispatch(updateView('QUESTION')) }>
+          <Button clickHandle={ () => dispatch( updateView('QUESTION') ) }>
             Let's play!
           </Button>
           <HowToPlay />
