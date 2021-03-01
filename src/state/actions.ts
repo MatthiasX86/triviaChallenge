@@ -10,7 +10,8 @@ import {
 import {
   UPDATE_QUESTION,
   UPDATE_VIEW,
-  ANSWER_QUESTION
+  ANSWER_QUESTION,
+  RESET
 } from './constants';
 
 
@@ -29,6 +30,10 @@ export const answerQuestion = ( count: number, isCorrect: boolean): IActionAnswe
   type: ANSWER_QUESTION,
   count,
   isCorrect
+})
+
+export const resetChallenge = () => ({
+  type: RESET,
 })
 
 const getData = () => fetch('https://opentdb.com/api.php?amount=10&difficulty=hard&type=boolean');

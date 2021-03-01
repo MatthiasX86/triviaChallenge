@@ -44,7 +44,11 @@ export interface IActionAnswer {
 }
 
 export interface IActionResult {
-  type: 'UPDATE_RESULT'
+  type: 'UPDATE_RESULT';
+}
+
+export interface IActionReset {
+  type: 'RESET';
 }
 
 export type IAction = IActionView & IActionQuestion & IActionResult;

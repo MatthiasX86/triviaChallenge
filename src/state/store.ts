@@ -5,7 +5,7 @@ import {
   UPDATE_VIEW,
   UPDATE_QUESTION,
   ANSWER_QUESTION,
-  UPDATE_RESULT
+  RESET
 } from './constants';
 
 const initialState: IState = {
@@ -19,8 +19,6 @@ const initialState: IState = {
 const reducer = (state: IState = initialState, action: IAction): IState => {
 
   const { type, view, data, count, isCorrect, questions } = action;
-
-  [].splice
 
   switch (type) {
 
@@ -48,6 +46,12 @@ const reducer = (state: IState = initialState, action: IAction): IState => {
         count: count + 1,
         questions: newQuestionsArray,
         result: isCorrect ? state.result + 1 : state.result
+      }
+
+    case RESET:
+      console.log('got here at the final')
+      return {
+        ...initialState,
       }
 
     default:

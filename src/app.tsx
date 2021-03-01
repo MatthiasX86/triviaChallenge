@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import {IState, IView} from './types';
 import Intro from './views/intro';
 import Questions from './views/questions';
+import Results from './views/results';
 
 interface IApp {
   view: IView;
@@ -21,7 +22,7 @@ const App: FunctionComponent<IApp> = ({ view }) => (
     )}
 
     {view === 'COMPLETED' && (
-      <span>this means this is the results screen</span>
+      <Results />
     )}
   </>
 )
