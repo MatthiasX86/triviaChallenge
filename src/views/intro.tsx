@@ -1,10 +1,12 @@
 import React, {FunctionComponent, useState} from 'react';
 import {Col} from 'react-bootstrap';
+import {connect} from 'react-redux';
 import styled from 'styled-components';
 import {Assets} from '../assets/assets';
 import {Button} from '../components/button';
+import {updateView} from '../state/actions';
 import {Animations, Transitions, UIStyles} from '../styles/mixins';
-import { IActive, IHandle } from '../types/index';
+import { IActionView, IActive } from '../types/index';
 
 /* ====== Containers ====== */
 
@@ -122,7 +124,7 @@ const HowLargeText = styled.h3<IActive>`
 
 const HowToPlay: FunctionComponent = () => { 
 
-  const [isActive, setActive] = useState(false);
+  const [isActive, setActive] = useState<boolean>(false);
 
   return (
     <InstructionsContainer
@@ -158,13 +160,17 @@ const HowToPlay: FunctionComponent = () => {
   )
  }
 
-export const Intro: FunctionComponent<IHandle> = ({ clickHandle }) => (
+interface IIntro {
+  dispatch: (action: IAction) => IActionView;
+}
+
+const Intro: FunctionComponent<IIntro> = ({ dispatch }) => (
   <Col lg={{ span: 10, offset: 1}}>
     <SectionContainer>
       <Title>Trivia<br/>Challenge</Title>
       <StartContainer>
         <Subtitle>Welcome to trivia Challenger!</Subtitle>
-        <Button clickHandle={clickHandle}>
+        <Button clickHandle={ () => dispatch(updateView('QUESTION')) }>
           Let's play!
         </Button>
         <HowToPlay />
@@ -172,3 +178,5 @@ export const Intro: FunctionComponent<IHandle> = ({ clickHandle }) => (
     </SectionContainer>
   </Col>
 )
+
+export default connect()(Intro);

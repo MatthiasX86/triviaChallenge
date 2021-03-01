@@ -22,12 +22,15 @@
     "react-bootstrap": "1.5.0",
     "react-dom": "^16.12.0",
     "react-helmet": "6.1.0",
+    "react-redux": "7.2.2",
+    "redux": "4.0.5",
     "styled-components": "5.2.1",
     "typescript": "4.2.2"
   },
   "devDependencies": {
     "@types/react-bootstrap": "0.32.25",
     "@types/react-helmet": "6.1.0",
+    "@types/react-redux": "7.1.16",
     "@typescript-eslint/eslint-plugin": "4.15.2",
     "@typescript-eslint/parser": "4.15.2",
     "eslint": "7.21.0",

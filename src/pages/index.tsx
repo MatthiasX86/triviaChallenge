@@ -1,15 +1,13 @@
-import React from "react"
+import React, {FunctionComponent} from "react"
 import Layout from "../layout/layout"
 import SEO from "../components/seo"
-import {Intro} from "../views/intro"
+import App from "../app"
 
-
-
-const IndexPage = () => (
+const IndexPage: FunctionComponent = () => (
   <>
     <SEO title="Home" />
     <Layout>
-      <Intro />
+      <App />
     </Layout>
   </>
 )

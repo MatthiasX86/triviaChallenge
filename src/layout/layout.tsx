@@ -5,6 +5,7 @@ import styled from "styled-components"
 import {Assets} from "../assets/assets"
 import {Helmet} from "react-helmet"
 import 'bootstrap/dist/css/bootstrap.min.css';
+import {State} from "../state/provider"
 
 const Main = styled.main`
   background-image: url("${Assets.backgroundImage}");
@@ -31,11 +32,14 @@ const Layout: FunctionComponent = ({ children }) => {
       </Helmet>
 
       <GlobalStyles />
-      <Main>
-        <Container>
-          {children}
-        </Container>
-      </Main>
+
+      <State>
+        <Main>
+          <Container>
+            {children}
+          </Container>
+        </Main>
+      </State>
     </>
   )
 }
